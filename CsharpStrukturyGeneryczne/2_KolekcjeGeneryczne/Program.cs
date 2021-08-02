@@ -11,6 +11,7 @@ namespace _2_KolekcjeGeneryczne
 		static void Main(string[] args)
 		{
             /*LISTA*/
+            Console.WriteLine("LISTA");
             List<Pracownik> pracownicy = new List<Pracownik>
             {
                 new Pracownik { Imie = "Marcin", Nazwisko = "Nowak"},
@@ -47,6 +48,7 @@ namespace _2_KolekcjeGeneryczne
             Console.WriteLine("*******************************");
             /***************************************************************************/
             /*KOLEJKA*/
+            Console.WriteLine("KOLEJKA");
             Queue<Pracownik> kolejka = new Queue<Pracownik>();
 
 			kolejka.Enqueue(new Pracownik { Imie = "Marcin", Nazwisko = "Nowak" });
@@ -61,7 +63,24 @@ namespace _2_KolekcjeGeneryczne
             }
 
             Console.WriteLine("*******************************");
+            /***************************************************************************/
+            /*STOS*/
+            Console.WriteLine("STOS");
+            Stack<Pracownik> stos = new Stack<Pracownik>();
+
+            stos.Push(new Pracownik { Imie = "Marcin", Nazwisko = "Nowak" });
+            stos.Push(new Pracownik { Imie = "Jan", Nazwisko = "Nowak" });
+            stos.Push(new Pracownik { Imie = "Tomek", Nazwisko = "Nowak" });
+            stos.Push(new Pracownik { Imie = "Ola", Nazwisko = "Nowak" });
+
+            while (stos.Count > 0)
+            {
+                var pracownik = stos.Pop();
+                Console.WriteLine(pracownik.Imie + " " + pracownik.Nazwisko);
+            }
+
+            Console.WriteLine("*******************************");
 
         }
-	}
+    }
 }
