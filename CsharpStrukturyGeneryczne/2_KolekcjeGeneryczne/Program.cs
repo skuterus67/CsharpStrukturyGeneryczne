@@ -9,9 +9,81 @@ namespace _2_KolekcjeGeneryczne
 	class Program
 	{
 		static void Main(string[] args)
-		{
+        {
             /*LISTA*/
             Console.WriteLine("LISTA");
+            Lista();
+
+            Console.WriteLine("*******************************");
+            /***************************************************************************/
+            /*KOLEJKA*/
+            Console.WriteLine("KOLEJKA");
+            Kolejka();
+
+            Console.WriteLine("*******************************");
+            /***************************************************************************/
+            /*STOS*/
+            Console.WriteLine("STOS");
+            Stos();
+
+            Console.WriteLine("*******************************");
+            /***************************************************************************/
+            /*HASHSET*/
+            Console.WriteLine("HASHSET");
+            HashSet();
+
+        }
+
+        private static void HashSet()
+        {
+            HashSet<Pracownik> set = new HashSet<Pracownik>();
+
+            var pracownik = new Pracownik { Imie = "Jan", Nazwisko = "Nowak" };
+            set.Add(new Pracownik { Imie = "Marcin", Nazwisko = "Nowak" });
+            set.Add(new Pracownik { Imie = "Marcin", Nazwisko = "Nowak" });
+            set.Add(pracownik);
+            set.Add(pracownik);
+
+            foreach (var item in set)
+            {
+                Console.WriteLine(item.Imie);
+            }
+        }
+
+        private static void Stos()
+        {
+            Stack<Pracownik> stos = new Stack<Pracownik>();
+
+            stos.Push(new Pracownik { Imie = "Marcin", Nazwisko = "Nowak" });
+            stos.Push(new Pracownik { Imie = "Jan", Nazwisko = "Nowak" });
+            stos.Push(new Pracownik { Imie = "Tomek", Nazwisko = "Nowak" });
+            stos.Push(new Pracownik { Imie = "Ola", Nazwisko = "Nowak" });
+
+            while (stos.Count > 0)
+            {
+                var pracownik = stos.Pop();
+                Console.WriteLine(pracownik.Imie + " " + pracownik.Nazwisko);
+            }
+        }
+
+        private static void Kolejka()
+        {
+            Queue<Pracownik> kolejka = new Queue<Pracownik>();
+
+            kolejka.Enqueue(new Pracownik { Imie = "Marcin", Nazwisko = "Nowak" });
+            kolejka.Enqueue(new Pracownik { Imie = "Jan", Nazwisko = "Nowak" });
+            kolejka.Enqueue(new Pracownik { Imie = "Tomek", Nazwisko = "Nowak" });
+            kolejka.Enqueue(new Pracownik { Imie = "Ola", Nazwisko = "Nowak" });
+
+            while (kolejka.Count > 0)
+            {
+                var pracownik = kolejka.Dequeue();
+                Console.WriteLine(pracownik.Imie + " " + pracownik.Nazwisko);
+            }
+        }
+
+        private static void Lista()
+        {
             List<Pracownik> pracownicy = new List<Pracownik>
             {
                 new Pracownik { Imie = "Marcin", Nazwisko = "Nowak"},
@@ -44,43 +116,6 @@ namespace _2_KolekcjeGeneryczne
             //	liczby.Add(1);
 
             //}
-
-            Console.WriteLine("*******************************");
-            /***************************************************************************/
-            /*KOLEJKA*/
-            Console.WriteLine("KOLEJKA");
-            Queue<Pracownik> kolejka = new Queue<Pracownik>();
-
-			kolejka.Enqueue(new Pracownik { Imie = "Marcin", Nazwisko = "Nowak" });
-            kolejka.Enqueue(new Pracownik { Imie = "Jan", Nazwisko = "Nowak" });
-            kolejka.Enqueue(new Pracownik { Imie = "Tomek", Nazwisko = "Nowak" });
-            kolejka.Enqueue(new Pracownik { Imie = "Ola", Nazwisko = "Nowak" });
-
-            while (kolejka.Count > 0)
-            {
-                var pracownik = kolejka.Dequeue();
-                Console.WriteLine(pracownik.Imie + " " + pracownik.Nazwisko);
-            }
-
-            Console.WriteLine("*******************************");
-            /***************************************************************************/
-            /*STOS*/
-            Console.WriteLine("STOS");
-            Stack<Pracownik> stos = new Stack<Pracownik>();
-
-            stos.Push(new Pracownik { Imie = "Marcin", Nazwisko = "Nowak" });
-            stos.Push(new Pracownik { Imie = "Jan", Nazwisko = "Nowak" });
-            stos.Push(new Pracownik { Imie = "Tomek", Nazwisko = "Nowak" });
-            stos.Push(new Pracownik { Imie = "Ola", Nazwisko = "Nowak" });
-
-            while (stos.Count > 0)
-            {
-                var pracownik = stos.Pop();
-                Console.WriteLine(pracownik.Imie + " " + pracownik.Nazwisko);
-            }
-
-            Console.WriteLine("*******************************");
-
         }
     }
 }
