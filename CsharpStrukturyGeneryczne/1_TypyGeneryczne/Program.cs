@@ -10,10 +10,17 @@ namespace _1_TypyGeneryczne
 	{
 		static void Main(string[] args)
         {
-            var kolejka = new DuzaKolejka<double>(pojemnosc: 3);
+            var kolejka = new KolejkaKolowa<double>();
             WprowadzanieDanych(kolejka);
-            PrzetwarzanieDanych(kolejka);
 
+
+            foreach (var item in kolejka)
+            {
+                Console.WriteLine(item);
+            }
+
+            PrzetwarzanieDanych(kolejka);
+           
             //var kolejkaInt = new KolejkaKolowa<int>();
             //var kolejkaString = new KolejkaKolowa<string>(1000);
 
