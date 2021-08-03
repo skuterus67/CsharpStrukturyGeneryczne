@@ -11,6 +11,12 @@ namespace _1_TypyGeneryczne
 		static void Main(string[] args)
         {
             Action<double> drukuj = d => Console.WriteLine(d);
+
+            Func<double, double> potegowanie = d => d * d;
+            Func<double, double, double> dodaj = (x, y) => x + y;
+
+            drukuj(potegowanie(1.2));
+            drukuj(dodaj(1.2, 5.6));
             
             var kolejka = new KolejkaKolowa<double>();
             WprowadzanieDanych(kolejka);
