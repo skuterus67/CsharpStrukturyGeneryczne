@@ -52,6 +52,28 @@ namespace _2_KolekcjeGeneryczne
             /*SLOWNIK SORTOWANY*/
             Console.WriteLine("SLOWNIK SORTOWANY");
             SortedDictionary();
+
+            Console.WriteLine("*******************************");
+            /***************************************************************************/
+            /*LISTA SORTOWANA*/
+            Console.WriteLine("LISTA SORTOWANA");
+            SortedList();
+
+        }
+
+        private static void SortedList()
+        {
+            var listaPosortowana = new SortedList<int, string>();
+
+            listaPosortowana.Add(3, "trzy");
+            listaPosortowana.Add(1, "jeden");
+            listaPosortowana.Add(4, "cztery");
+            listaPosortowana.Add(2, "dwa");
+
+            foreach (var item in listaPosortowana)
+            {
+                Console.WriteLine(item.Value);
+            }
         }
 
         private static void SortedDictionary()
