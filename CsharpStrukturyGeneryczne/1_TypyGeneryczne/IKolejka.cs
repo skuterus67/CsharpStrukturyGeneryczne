@@ -9,7 +9,5 @@ namespace _1_TypyGeneryczne
 
         T Czytaj();
         void Zapisz(T wartosc);
-
-        IEnumerable<Twyjscie> ElementJako<Twyjscie>();
     }
 }

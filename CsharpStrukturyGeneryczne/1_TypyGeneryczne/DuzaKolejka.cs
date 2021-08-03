@@ -27,17 +27,6 @@ namespace _1_TypyGeneryczne
             kolejka.Enqueue(wartosc);
         }
 
-        public IEnumerable<Twyjscie> ElementJako<Twyjscie>()
-        {
-            var konwerter = TypeDescriptor.GetConverter(typeof(T));
-
-            foreach (var item in kolejka)
-            {
-                var wynik = konwerter.ConvertTo(item, typeof(Twyjscie));
-                yield return (Twyjscie)wynik;
-            }
-        }
-
         public IEnumerator<T> GetEnumerator()
         {
             //return kolejka.GetEnumerator();
