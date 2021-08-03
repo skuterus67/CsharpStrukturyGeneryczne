@@ -8,19 +8,24 @@ namespace _1_TypyGeneryczne
 {
 	class Program
 	{
+        static void KonsolaWypisz(double dane)
+        {
+            Console.WriteLine(dane);
+        }
+
 		static void Main(string[] args)
         {
             var kolejka = new KolejkaKolowa<double>();
             WprowadzanieDanych(kolejka);
+            
+            kolejka.Drukuj(KonsolaWypisz);
 
-            kolejka.Drukuj();
+            //var elementyJakoInt = kolejka.ElementJako<double, int>();
 
-            var elementyJakoInt = kolejka.ElementJako<double, int>();
-
-            foreach (var item in elementyJakoInt)
-            {
-                Console.WriteLine(item);
-            }
+            //foreach (var item in elementyJakoInt)
+            //{
+            //    Console.WriteLine(item);
+            //}
 
             PrzetwarzanieDanych(kolejka);
            
