@@ -19,5 +19,13 @@ namespace _1_TypyGeneryczne
                 yield return (Twyjscie)wynik;
             }
         }
+
+        public static void Drukuj<T>(this IKolejka<T> kolejka)
+        {
+            foreach (var item in kolejka)
+            {
+                Console.WriteLine(item);
+            }
+        }
     }
 }
