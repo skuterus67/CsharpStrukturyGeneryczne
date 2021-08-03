@@ -13,8 +13,9 @@ namespace _1_TypyGeneryczne
             var kolejka = new KolejkaKolowa<double>();
             WprowadzanieDanych(kolejka);
 
+            var elementyJakoInt = kolejka.ElementJako<string>();
 
-            foreach (var item in kolejka)
+            foreach (var item in elementyJakoInt)
             {
                 Console.WriteLine(item);
             }

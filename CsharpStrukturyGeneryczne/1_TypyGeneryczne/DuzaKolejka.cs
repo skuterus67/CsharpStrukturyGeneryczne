@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace _1_TypyGeneryczne
 {
@@ -24,6 +25,17 @@ namespace _1_TypyGeneryczne
         public virtual void Zapisz(T wartosc)
         {
             kolejka.Enqueue(wartosc);
+        }
+
+        public IEnumerable<Twyjscie> ElementJako<Twyjscie>()
+        {
+            var konwerter = TypeDescriptor.GetConverter(typeof(T));
+
+            foreach (var item in kolejka)
+            {
+                var wynik = konwerter.ConvertTo(item, typeof(Twyjscie));
+                yield return (Twyjscie)wynik;
+            }
         }
 
         public IEnumerator<T> GetEnumerator()
