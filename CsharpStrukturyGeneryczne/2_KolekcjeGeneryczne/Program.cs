@@ -46,6 +46,32 @@ namespace _2_KolekcjeGeneryczne
             /*SLOWNIK*/
             Console.WriteLine("SLOWNIK");
             Slownik();
+
+            Console.WriteLine("*******************************");
+            /***************************************************************************/
+            /*SLOWNIK SORTOWANY*/
+            Console.WriteLine("SLOWNIK SORTOWANY");
+            SortedDictionary();
+        }
+
+        private static void SortedDictionary()
+        {
+            var pracownicy = new SortedDictionary<string, List<Pracownik>>();
+
+            pracownicy.Add("Sprzedaz", new List<Pracownik> { new Pracownik { Imie = "Jan", Nazwisko = "Kowal" },
+                                                             new Pracownik { Imie = "Tomek", Nazwisko = "Nowak" },
+                                                             new Pracownik { Imie = "Marcin", Nazwisko = "Bien" }});
+            pracownicy.Add("Informatyka", new List<Pracownik> { new Pracownik { Imie = "Marcin", Nazwisko = "Kowal"},
+                                                                new Pracownik { Imie = "Tomek", Nazwisko = "Wrobel" }});
+            pracownicy.Add("Ksiegowosc", new List<Pracownik> { new Pracownik { Imie = "Olek", Nazwisko = "Kowalski" },
+                                                               new Pracownik { Imie = "Bartek", Nazwisko = "Nawrocko" },
+                                                               new Pracownik { Imie = "Jurek", Nazwisko = "Pytel" },
+                                                               new Pracownik { Imie = "Robert", Nazwisko = "Stach" }});
+
+            foreach (var item in pracownicy)
+            {
+                Console.WriteLine("Ilosc pracownikow w dziale {0} wynosi {1}", item.Key, item.Value.Count);
+            }
         }
 
         private static void Slownik()
