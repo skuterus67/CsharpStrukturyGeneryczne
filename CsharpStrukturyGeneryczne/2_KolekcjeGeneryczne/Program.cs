@@ -64,6 +64,36 @@ namespace _2_KolekcjeGeneryczne
             /*ZBIOR SORTOWANY*/
             Console.WriteLine("ZBIOR SORTOWANY");
             SortedSet();
+
+            Console.WriteLine("*******************************");
+            /***************************************************************************/
+            /*POROWNYWANIE PRACOWNIKOW*/
+            Console.WriteLine("POROWNYWANIE PRACOWNIKOW");
+            var pracownicy = new SortedDictionary<string, SortedSet<Pracownik>>();
+
+            pracownicy.Add("Ksiegowosc", new SortedSet<Pracownik>(new PracownikComparer()));
+
+            pracownicy["Ksiegowosc"].Add(new Pracownik { Nazwisko = "Nowak" });
+            pracownicy["Ksiegowosc"].Add(new Pracownik { Nazwisko = "Kowal" });
+            pracownicy["Ksiegowosc"].Add(new Pracownik { Nazwisko = "Kaczor" });
+            pracownicy["Ksiegowosc"].Add(new Pracownik { Nazwisko = "Bogacki" });
+            pracownicy["Ksiegowosc"].Add(new Pracownik { Nazwisko = "Nowak" });
+
+            pracownicy.Add("Sprzedaz", new SortedSet<Pracownik>(new PracownikComparer()));
+
+            pracownicy["Sprzedaz"].Add(new Pracownik { Nazwisko = "Nowak" });
+            pracownicy["Sprzedaz"].Add(new Pracownik { Nazwisko = "Glowacki" });
+            pracownicy["Sprzedaz"].Add(new Pracownik { Nazwisko = "Czapla" });
+            pracownicy["Sprzedaz"].Add(new Pracownik { Nazwisko = "Nowak" });
+
+            foreach (var dzial in pracownicy)
+            {
+                Console.WriteLine(dzial.Key);
+                foreach (var pracownik in dzial.Value)
+                {
+                    Console.WriteLine("\t" + pracownik.Nazwisko);
+                }
+            }
         }
 
         private static void SortedSet()
