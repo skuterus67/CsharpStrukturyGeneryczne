@@ -59,6 +59,41 @@ namespace _2_KolekcjeGeneryczne
             Console.WriteLine("LISTA SORTOWANA");
             SortedList();
 
+            Console.WriteLine("*******************************");
+            /***************************************************************************/
+            /*ZBIOR SORTOWANY*/
+            Console.WriteLine("ZBIOR SORTOWANY");
+            SortedSet();
+        }
+
+        private static void SortedSet()
+        {
+            var set = new SortedSet<int>();
+            set.Add(8);
+            set.Add(6);
+            set.Add(5);
+            set.Add(3);
+            set.Add(2);
+            set.Add(1);
+
+            foreach (var item in set)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine("*******************************");
+            var set2 = new SortedSet<string>();
+            set2.Add("tomek");
+            set2.Add("iza");
+            set2.Add("ola");
+            set2.Add("ala");
+            set2.Add("piotr");
+            set2.Add("beata");
+
+            foreach (var item in set2)
+            {
+                Console.WriteLine(item);
+            }
         }
 
         private static void SortedList()
