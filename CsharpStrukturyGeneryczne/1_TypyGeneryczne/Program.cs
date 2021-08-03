@@ -11,13 +11,15 @@ namespace _1_TypyGeneryczne
 		static void Main(string[] args)
         {
             Action<double> drukuj = d => Console.WriteLine(d);
+            Action<bool> drukujB = d => Console.WriteLine(d);
 
             Func<double, double> potegowanie = d => d * d;
             Func<double, double, double> dodaj = (x, y) => x + y;
 
-            drukuj(potegowanie(1.2));
-            drukuj(dodaj(1.2, 5.6));
-            
+            Predicate<double> jestMniejszeOdSto = d => d < 100;
+
+            drukujB(jestMniejszeOdSto(potegowanie(dodaj(6, 8))));
+
             var kolejka = new KolejkaKolowa<double>();
             WprowadzanieDanych(kolejka);
             
