@@ -40,6 +40,42 @@ namespace _2_KolekcjeGeneryczne
 
             Console.WriteLine("*******************************");
             LinkedList2();
+
+            Console.WriteLine("*******************************");
+            /***************************************************************************/
+            /*SLOWNIK*/
+            Console.WriteLine("SLOWNIK");
+            Slownik();
+        }
+
+        private static void Slownik()
+        {
+            var pracownicy = new Dictionary<string, List<Pracownik>>();
+            pracownicy.Add("Ksiegowosc", new List<Pracownik>() { new Pracownik { Nazwisko = "Nowak" },
+                                                                 new Pracownik { Nazwisko = "Kowal"},
+                                                                 new Pracownik { Nazwisko = "Kaczor"} });
+
+            pracownicy["Ksiegowosc"].Add(new Pracownik { Nazwisko = "Nowak" });
+
+            pracownicy.Add("Informatyka", new List<Pracownik>() { new Pracownik { Nazwisko = "Kowalski" },
+                                                                  new Pracownik { Nazwisko = "Bogacki" } });
+            //var kowal = pracownicy["Kowal"];
+
+            foreach (var item in pracownicy)
+            {
+                Console.WriteLine("Dział: " + item.Key);
+                foreach (var pracownik in item.Value)
+                {
+                    Console.WriteLine(pracownik.Nazwisko);
+                }
+                Console.WriteLine();
+            }
+
+            Console.WriteLine("Pracownicy z ksiegowosci:");
+            foreach (var pracownik in pracownicy["Ksiegowosc"])
+            {
+                Console.WriteLine(pracownik.Nazwisko);
+            }
         }
 
         private static void LinkedList2()
