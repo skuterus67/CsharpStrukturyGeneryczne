@@ -69,22 +69,18 @@ namespace _2_KolekcjeGeneryczne
             /***************************************************************************/
             /*POROWNYWANIE PRACOWNIKOW*/
             Console.WriteLine("POROWNYWANIE PRACOWNIKOW");
-            var pracownicy = new SortedDictionary<string, SortedSet<Pracownik>>();
+            var pracownicy = new DzialyKolekcja();
 
-            pracownicy.Add("Ksiegowosc", new SortedSet<Pracownik>(new PracownikComparer()));
+            pracownicy.Add("Ksiegowosc", new Pracownik { Nazwisko = "Nowak" })
+                      .Add("Ksiegowosc", new Pracownik { Nazwisko = "Kaczor" })
+                      .Add("Ksiegowosc", new Pracownik { Nazwisko = "Bogacki" })
+                      .Add("Ksiegowosc", new Pracownik { Nazwisko = "Nowak" })
+                      .Add("Ksiegowosc", new Pracownik { Nazwisko = "Kowal" });
 
-            pracownicy["Ksiegowosc"].Add(new Pracownik { Nazwisko = "Nowak" });
-            pracownicy["Ksiegowosc"].Add(new Pracownik { Nazwisko = "Kowal" });
-            pracownicy["Ksiegowosc"].Add(new Pracownik { Nazwisko = "Kaczor" });
-            pracownicy["Ksiegowosc"].Add(new Pracownik { Nazwisko = "Bogacki" });
-            pracownicy["Ksiegowosc"].Add(new Pracownik { Nazwisko = "Nowak" });
-
-            pracownicy.Add("Sprzedaz", new SortedSet<Pracownik>(new PracownikComparer()));
-
-            pracownicy["Sprzedaz"].Add(new Pracownik { Nazwisko = "Nowak" });
-            pracownicy["Sprzedaz"].Add(new Pracownik { Nazwisko = "Glowacki" });
-            pracownicy["Sprzedaz"].Add(new Pracownik { Nazwisko = "Czapla" });
-            pracownicy["Sprzedaz"].Add(new Pracownik { Nazwisko = "Nowak" });
+            pracownicy.Add("Sprzedaz", new Pracownik { Nazwisko = "Nowak" })
+                      .Add("Sprzedaz", new Pracownik { Nazwisko = "Glowacki" })
+                      .Add("Sprzedaz", new Pracownik { Nazwisko = "Czapla" })
+                      .Add("Sprzedaz", new Pracownik { Nazwisko = "Nowak" });
 
             foreach (var dzial in pracownicy)
             {
