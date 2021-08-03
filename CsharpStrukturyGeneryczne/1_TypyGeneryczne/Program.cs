@@ -10,7 +10,7 @@ namespace _1_TypyGeneryczne
 	{
 		static void Main(string[] args)
         {
-            var kolejka = new KolejkaKolowa<double>(pojemnosc: 3);
+            var kolejka = new DuzaKolejka<double>(pojemnosc: 3);
             WprowadzanieDanych(kolejka);
             PrzetwarzanieDanych(kolejka);
 
@@ -32,7 +32,7 @@ namespace _1_TypyGeneryczne
 
         }
 
-        private static void PrzetwarzanieDanych(KolejkaKolowa<double> kolejka)
+        private static void PrzetwarzanieDanych(IKolejka<double> kolejka)
         {
             var suma = 0.0;
             Console.WriteLine("w naszej kolejce jest: ");
@@ -43,7 +43,7 @@ namespace _1_TypyGeneryczne
             Console.WriteLine(suma);
         }
 
-        private static void WprowadzanieDanych(KolejkaKolowa<double> kolejka)
+        private static void WprowadzanieDanych(IKolejka<double> kolejka)
         {
             while (true)
             {
