@@ -20,7 +20,9 @@ namespace _1_TypyGeneryczne
 
             //drukujB(jestMniejszeOdSto(potegowanie(dodaj(6, 8))));
 
-            var kolejka = new KolejkaKolowa<double>();
+            var kolejka = new KolejkaKolowa<double>(pojemnosc:3);
+            kolejka.elementUsuniety += Kolejka_elementUsuniety;
+
             WprowadzanieDanych(kolejka);
 
             //Converter<double, DateTime> konwerter = d => new DateTime(2018, 1, 1).AddDays(d);
@@ -58,6 +60,11 @@ namespace _1_TypyGeneryczne
             //}
 
 
+        }
+
+        private static void Kolejka_elementUsuniety(object sender, ElementUsunietyEventArgs<double> e)
+        {
+            Console.WriteLine("Kolejka jest pelna. Element usuniety to: {0}. Nowy element to: {1}", e.ElementUsuniety, e.NowyElement);
         }
 
         private static void PrzetwarzanieDanych(IKolejka<double> kolejka)
