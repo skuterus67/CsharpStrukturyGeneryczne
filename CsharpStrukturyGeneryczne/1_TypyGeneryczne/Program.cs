@@ -10,20 +10,28 @@ namespace _1_TypyGeneryczne
 	{
 		static void Main(string[] args)
         {
-            Action<double> drukuj = d => Console.WriteLine(d);
-            Action<bool> drukujB = d => Console.WriteLine(d);
+            //Action<double> drukuj = d => Console.WriteLine(d);
+            //Action<bool> drukujB = d => Console.WriteLine(d);
 
-            Func<double, double> potegowanie = d => d * d;
-            Func<double, double, double> dodaj = (x, y) => x + y;
+            //Func<double, double> potegowanie = d => d * d;
+            //Func<double, double, double> dodaj = (x, y) => x + y;
 
-            Predicate<double> jestMniejszeOdSto = d => d < 100;
+            //Predicate<double> jestMniejszeOdSto = d => d < 100;
 
-            drukujB(jestMniejszeOdSto(potegowanie(dodaj(6, 8))));
+            //drukujB(jestMniejszeOdSto(potegowanie(dodaj(6, 8))));
 
             var kolejka = new KolejkaKolowa<double>();
             WprowadzanieDanych(kolejka);
+
+            //Converter<double, DateTime> konwerter = d => new DateTime(2018, 1, 1).AddDays(d);
+            var jakoData = kolejka.Mapuj(d => new DateTime(2018, 1, 1).AddDays(d));
+
+            foreach (var item in jakoData)
+            {
+                Console.WriteLine(item);
+            }
             
-            kolejka.Drukuj(drukuj);
+            //kolejka.Drukuj(drukuj);
 
             //var elementyJakoInt = kolejka.ElementJako<double, int>();
 
